@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using MixMedia.JointSpace.Models.Requests;
+using MixMedia.JointSpace.Models.Responses;
 
 namespace MixMedia.JointSpace.Manager
 {
@@ -18,9 +15,9 @@ namespace MixMedia.JointSpace.Manager
         }
 
         // TODO: http://ip-address:1925/1/audio/volume
-        public async void GetAudioVolume()
+        public async Task<VolumeResponse> GetAudioVolume()
         {
-            await client.GetAsync($"/1/audio/volume");
+            return await client.GetAsync<VolumeResponse>($"/1/audio/volume");
         }
 
         // TODO: http://ip-address:1925/1/audio/volume

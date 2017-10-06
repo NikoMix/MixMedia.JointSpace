@@ -4,10 +4,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MixMedia.JointSpace.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class AudioManagerUnitTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void GetAudioVolumeTest()
         {
         }
     }
