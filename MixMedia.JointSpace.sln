@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MixMedia.JointSpace", "MixMedia.JointSpace\MixMedia.JointSpace.csproj", "{FAB4CF4F-BA70-47D8-981A-D438FDE2B55D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixMedia.JointSpace.Tests", "Tests\MixMedia.JointSpace.Tests\MixMedia.JointSpace.Tests.csproj", "{0F8A8B45-F861-468A-BB96-1957F9276427}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MixMedia.JointSpace.Tests", "Tests\MixMedia.JointSpace.Tests\MixMedia.JointSpace.Tests.csproj", "{A4751AB5-7791-4949-BE98-5494111C05A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{FAB4CF4F-BA70-47D8-981A-D438FDE2B55D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAB4CF4F-BA70-47D8-981A-D438FDE2B55D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAB4CF4F-BA70-47D8-981A-D438FDE2B55D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F8A8B45-F861-468A-BB96-1957F9276427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F8A8B45-F861-468A-BB96-1957F9276427}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F8A8B45-F861-468A-BB96-1957F9276427}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F8A8B45-F861-468A-BB96-1957F9276427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4751AB5-7791-4949-BE98-5494111C05A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4751AB5-7791-4949-BE98-5494111C05A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4751AB5-7791-4949-BE98-5494111C05A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4751AB5-7791-4949-BE98-5494111C05A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

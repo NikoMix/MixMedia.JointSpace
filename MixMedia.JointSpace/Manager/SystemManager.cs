@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using MixMedia.JointSpace.Models;
+using MixMedia.JointSpace.Models.Responses;
 
 namespace MixMedia.JointSpace.Manager
 {
@@ -15,51 +16,51 @@ namespace MixMedia.JointSpace.Manager
         }
 
         // TODO: http://ip-address:1925/1/system
-        public async void GetSystemDetails()
+        public async Task<SystemResponse> GetSystemDetails()
         {
-            await _client.GetAsync($"/1/system");
+            return await _client.GetAsync<SystemResponse>($"/1/system");
         }
 
         // TODO: http://ip-address:1925/1/system/country
         public async Task<JointSpaceCountries> GetCountry()
         {
-            await _client.GetAsync($"/1/system/country");
-            return JointSpaceCountries.Unknown;
+            var response = await _client.GetAsync<CountryResponse>($"/1/system/country");
+            return response.Country;
         }
 
         // TODO: http://ip-address:1925/1/system/name
         public async Task<string> GetName()
         {
-            await _client.GetAsync($"/1/system/name");
-            return string.Empty;
+            var response = await _client.GetAsync<NameResponse>($"/1/system/name");
+            return response.Name;
         }
 
         // TODO: http://ip-address:1925/1/system/menulanguage
         public async Task<JointSpaceMenuLanguages> GetMenuLanguage()
         {
-            await _client.GetAsync($"/1/system/menulanguage");
-            return JointSpaceMenuLanguages.Unknown;
+            var response = await _client.GetAsync<MenuLanguageResponse>($"/1/system/menulanguage");
+            return response.MenuLanguage;
         }
 
         // TODO: http://ip-address:1925/1/system/serialnumber
         public async Task<string> GetSerialNumber()
         {
-            await _client.GetAsync($"/1/system/serialnumber");
-            return String.Empty;
+            var response = await _client.GetAsync<SerialNumberResponse>($"/1/system/serialnumber");
+            return response.SerialNumber;
         }
 
         // TODO: http://ip-address:1925/1/system/model
         public async Task<string> GetModel()
         {
-            await _client.GetAsync($"/1/system/model");
-            return String.Empty;
+            var response = await _client.GetAsync<ModelResponse>($"/1/system/model");
+            return response.Model;
         }
 
         // TODO: http://ip-address:1925/1/system/softwareversion
         public async Task<string> GetSoftwareVersion()
         {
-            await _client.GetAsync($"/1/system/softwareversion");
-            return String.Empty;
+            var response = await _client.GetAsync<SoftwareVersionResponse>($"/1/system/softwareversion");
+            return response.SoftwareVersion;
         }
     }
 }

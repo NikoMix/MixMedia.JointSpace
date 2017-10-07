@@ -28,10 +28,18 @@ namespace MixMedia.JointSpace
             where TRequest : new()
             where TResponse : new()
         {
-            var response = await client.PostAsync(requestedUri, 
-                new JsonContent<TRequest>(requestObject));
+            var response = await client.PostAsync(requestedUri,
+                AsStringContent(requestObject));
 
             return await response.As<TResponse>();
+        }
+
+        public static async Task<HttpResponseMessage> PostAsync<TRequest>(this HttpClient client, string requestedUri, TRequest requestObject)
+            where TRequest : new()
+        {
+            return await client.PostAsync(requestedUri,
+              AsStringContent(requestObject));
+            
         }
 
         public static async Task<TResponse> PutAsync<TRequest, TResponse>(this HttpClient client, string requestedUri, TRequest requestObject)
@@ -39,9 +47,14 @@ namespace MixMedia.JointSpace
             where TResponse : new()
         {
             var response = await client.PutAsync(requestedUri,
-                new JsonContent<TRequest>(requestObject));
+                AsStringContent<TRequest>(requestObject));
 
             return await response.As<TResponse>();
+        }
+
+        public static StringContent AsStringContent<T>(this T obj)
+        {
+            return new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8);
         }
 
         public static async Task<T> As<T>(this HttpResponseMessage response)
