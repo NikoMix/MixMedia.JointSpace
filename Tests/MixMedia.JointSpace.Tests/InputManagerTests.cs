@@ -21,26 +21,40 @@ namespace MixMedia.JointSpace.Tests
         public InputManagerTests(ITestOutputHelper output)
         {
             this.output = output;
-            client = new HttpClient() { BaseAddress = new Uri("http://<localip>:1925") };
+            client = new HttpClient() { BaseAddress = new Uri("http://192.168.0.13:1925") };
             manager = new InputManager(client);
         }
 
-        [Fact]
-        public void SendKeyMessageSerializationTestAsync()
+        [Theory]
+        [InlineData(JointSpaceKeys.Standby)]
+        [InlineData(JointSpaceKeys.Adjust)]
+        [InlineData(JointSpaceKeys.AmbilightOnOff)]
+        [InlineData(JointSpaceKeys.Back)]
+        [InlineData(JointSpaceKeys.BlueColour)]
+        [InlineData(JointSpaceKeys.ChannelStepDown)]
+        [InlineData(JointSpaceKeys.ChannelStepUp)]
+        [InlineData(JointSpaceKeys.Confirm)]
+        [InlineData(JointSpaceKeys.CursorDown)]
+        [InlineData(JointSpaceKeys.CursorLeft)]
+        [InlineData(JointSpaceKeys.CursorRight)]
+        [InlineData(JointSpaceKeys.CursorUp)]
+        [InlineData(JointSpaceKeys.Digit0)]
+        [InlineData(JointSpaceKeys.Digit1)]
+        [InlineData(JointSpaceKeys.Digit2)]
+        [InlineData(JointSpaceKeys.Digit3)]
+        [InlineData(JointSpaceKeys.Digit4)]
+        [InlineData(JointSpaceKeys.Digit5)]
+        [InlineData(JointSpaceKeys.Digit6)]
+        [InlineData(JointSpaceKeys.Digit7)]
+        [InlineData(JointSpaceKeys.Digit8)]
+        [InlineData(JointSpaceKeys.Digit9)]
+        [InlineData(JointSpaceKeys.Dot)]
+        [InlineData(JointSpaceKeys.Stop)]
+        public async Task InputManagerSendKeyTestAsync(JointSpaceKeys key)
         {
-            var request = new SendKeyRequest() {Key = JointSpaceKeys.Standby};
-            var message = JsonConvert.SerializeObject(request);
-            Assert.NotNull(message);
-            Assert.NotEqual(message, new SendKeyRequest().ToString());
-        }
+            var result = await manager.SendKey(key);
 
-
-        [Fact]
-        public async Task InputManagerSendKeyTestAsync()
-        {
-            var result = await manager.SendKey(JointSpaceKeys.Standby);
-
-            Assert.Equal(result.StatusCode, HttpStatusCode.OK);
+            Assert.Equal(HttpStatusCode.OK, result.StatusCode);
         }
     }
 }

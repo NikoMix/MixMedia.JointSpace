@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
+using MixMedia.JointSpace.Models;
 using MixMedia.JointSpace.Models.Requests;
 using MixMedia.JointSpace.Models.Responses;
 
@@ -13,18 +14,20 @@ namespace MixMedia.JointSpace.Manager
         {
             _client = client;
         }
-
-        // TODO: http://ip-address:1925/1/audio/volume
-        public async Task<VolumeResponse> GetAudioVolume()
+        
+        public async Task<Volume> GetAudioVolume()
         {
-            return await _client.GetAsync<VolumeResponse>($"/1/audio/volume");
+            return await _client.GetAsync<Volume>($"/1/audio/volume");
         }
 
-        // TODO: http://ip-address:1925/1/audio/volume
-        public async void SetAudioVolume(bool muted, int volume)
+        public async void SetAudioVolume(int volume)
         {
-            var setVolume = new SetVolumeRequest();
-            await _client.PostAsync($"/1/audio/volume", new StringContent(""));
+            await _client.PostAsync($"/1/audio/volume", new SetVolumeRequest{ Volume = volume});
+        }
+
+        public async void SetAudioMute(bool muted)
+        {
+            await _client.PostAsync($"/1/audio/volume", new SetVolumeRequest { Muted = muted });
         }
     }
 }

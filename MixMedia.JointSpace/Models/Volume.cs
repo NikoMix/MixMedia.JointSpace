@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace MixMedia.JointSpace.Models.Responses
+namespace MixMedia.JointSpace.Models
 {
-    public class VolumeResponse
+    public class Volume
     {
         /// <summary>
         /// Set to true if the sound is muted, false if not.

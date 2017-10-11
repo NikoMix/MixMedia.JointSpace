@@ -1,5 +1,7 @@
 ﻿using System.Net.Http;
+using System.Threading.Tasks;
 using MixMedia.JointSpace.Models;
+using MixMedia.JointSpace.Models.Ambilight;
 
 namespace MixMedia.JointSpace.Manager
 {
@@ -11,11 +13,10 @@ namespace MixMedia.JointSpace.Manager
         {
             this.client = client;
         }
-
-        // TODO: http://ip-address:1925/1/ambilight/topology
-        public async void GetTopology()
+        
+        public async Task<Topology> GetTopology()
         {
-            await client.GetAsync($"/1/ambilight/topology");
+            return await client.GetAsync<Topology>($"/1/ambilight/topology");
         }
 
         // TODO: http://ip-address:1925/1/ambilight/mode
@@ -29,17 +30,16 @@ namespace MixMedia.JointSpace.Manager
         {
             await client.PostAsync($"/1/ambilight/mode", new StringContent(""));
         }
-
-        // TODO: http://ip-address:1925/1/ambilight/measured
-        public async void GetAmbilightMeasured()
+        
+        public async Task<State> GetAmbilightMeasured()
         {
-            await client.GetAsync($"/1/ambilight/measured");
+            return await client.GetAsync<State>($"/1/ambilight/measured");
         }
 
         // TODO: http://ip-address:1925/1/ambilight/processed
-        public async void GetAmbilightProcessed()
+        public async Task<State> GetAmbilightProcessed()
         {
-            await client.GetAsync($"/1/ambilight/processed");
+            return await client.GetAsync<State>($"/1/ambilight/processed");
         }
     }
 }

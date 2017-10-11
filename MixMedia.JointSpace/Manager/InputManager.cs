@@ -16,8 +16,6 @@ namespace MixMedia.JointSpace.Controller
             this.client = client;
         }
 
-        // TODO: http://ip-address:1925/1/input/key
-        // AllowAnnonym
         public async Task<HttpResponseMessage> SendKey(JointSpaceKeys key)
         {
             return await client.PostAsync($"/1/input/key", new SendKeyRequest() { Key = key });

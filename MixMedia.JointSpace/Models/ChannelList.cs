@@ -2,8 +2,7 @@
 
 namespace MixMedia.JointSpace.Models
 {
-    public class ChannelList
+    public class ChannelList<T> : Dictionary<string, T>
     {
-        public Dictionary<string, ChannelDetails> Channels { get; set; }
     }
 }

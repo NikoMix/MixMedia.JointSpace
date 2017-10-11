@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace MixMedia.JointSpace.Models.Responses
+namespace MixMedia.JointSpace.Models
 {
-    public class SystemResponse
+    public class System
     {
         /// <summary>
         /// The current menu language.

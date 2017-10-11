@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using MixMedia.JointSpace.Models;
+using MixMedia.JointSpace.Models.Source;
 
 namespace MixMedia.JointSpace.Manager
 {
@@ -13,23 +16,19 @@ namespace MixMedia.JointSpace.Manager
             this.client = client;
         }
 
-        // TODO: http://ip-address:1925/1/sources
-        public async void GetSources()
+        public async Task<SourceList<Source>> GetSources()
         {
-            await client.GetAsync($"/1/sources");
+            return await client.GetAsync<SourceList<Source>>($"/1/sources");
         }
 
-        // TODO: http://ip-address:1925/1/sources/current
-        public async Task<string> GetCurrentSource()
+        public async Task<SimpleSource> GetCurrentSource()
         {
-            await client.GetAsync($"/1/sources/current");
-            return String.Empty;
+            return await client.GetAsync<SimpleSource>($"/1/sources/current");
         }
-
-        // TODO: http://ip-address:1925/1/sources/current
+        
         public async void SetCurrentSource(string id)
         {
-            await client.PostAsync($"/1/sources/current", new StringContent(""));
+            await client.PostAsync($"/1/sources/current", new SimpleSource { Id = id});
         }
     }
 }

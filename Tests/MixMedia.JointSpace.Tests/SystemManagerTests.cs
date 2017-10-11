@@ -19,7 +19,7 @@ namespace MixMedia.JointSpace.Tests
         public SystemManagerTests(ITestOutputHelper output)
         {
             this.output = output;
-            client = new HttpClient() { BaseAddress = new Uri("http://<localip>:1925") };
+            client = new HttpClient() { BaseAddress = new Uri("http://192.168.0.13:1925") };
             manager = new SystemManager(client);
         }
 
