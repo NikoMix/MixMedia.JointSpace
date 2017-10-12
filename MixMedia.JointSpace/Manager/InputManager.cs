@@ -3,20 +3,20 @@ using System.Threading.Tasks;
 using MixMedia.JointSpace.Models;
 using MixMedia.JointSpace.Models.Requests;
 
-namespace MixMedia.JointSpace.Controller
+namespace MixMedia.JointSpace.Manager
 {
     public class InputManager
     {
-        private readonly HttpClient client;
+        private readonly HttpClient _client;
         
         public InputManager(HttpClient client)
         {
-            this.client = client;
+            this._client = client;
         }
 
         public async Task<HttpResponseMessage> SendKey(JointSpaceKeys key)
         {
-            return await client.PostAsync($"/1/input/key", new SendKeyRequest() { Key = key });
+            return await _client.PostAsync($"/1/input/key", new SendKeyRequest() { Key = key });
         }
     }
 }

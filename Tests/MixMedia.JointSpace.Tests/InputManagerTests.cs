@@ -1,6 +1,6 @@
 using System.Net;
 using System.Threading.Tasks;
-using MixMedia.JointSpace.Controller;
+using MixMedia.JointSpace.Manager;
 using MixMedia.JointSpace.Models;
 using Xunit;
 
