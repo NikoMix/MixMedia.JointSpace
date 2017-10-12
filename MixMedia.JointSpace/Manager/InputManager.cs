@@ -1,6 +1,4 @@
-﻿using System;
-using System.Net.Http;
-using System.Text;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using MixMedia.JointSpace.Models;
 using MixMedia.JointSpace.Models.Requests;

@@ -14,8 +14,4 @@
     </Reference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\Channel\" />
-  </ItemGroup>
-
 </Project>

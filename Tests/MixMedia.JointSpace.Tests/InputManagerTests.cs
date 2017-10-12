@@ -1,28 +1,18 @@
-using System;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using MixMedia.JointSpace.Controller;
-using MixMedia.JointSpace.Manager;
 using MixMedia.JointSpace.Models;
-using MixMedia.JointSpace.Models.Requests;
-using Newtonsoft.Json;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace MixMedia.JointSpace.Tests
 {
-    public class InputManagerTests
+    public class InputManagerTests : IClassFixture<HttpClientFixture>
     {
-        private readonly ITestOutputHelper output;
-        private readonly HttpClient client;
-        private readonly InputManager manager;
+        private readonly InputManager _manager;
 
-        public InputManagerTests(ITestOutputHelper output)
+        public InputManagerTests(HttpClientFixture clientFixture)
         {
-            this.output = output;
-            client = new HttpClient() { BaseAddress = new Uri("http://192.168.0.13:1925") };
-            manager = new InputManager(client);
+            _manager = new InputManager(clientFixture.Client);
         }
 
         [Theory]
@@ -52,7 +42,7 @@ namespace MixMedia.JointSpace.Tests
         [InlineData(JointSpaceKeys.Stop)]
         public async Task InputManagerSendKeyTestAsync(JointSpaceKeys key)
         {
-            var result = await manager.SendKey(key);
+            var result = await _manager.SendKey(key);
 
             Assert.Equal(HttpStatusCode.OK, result.StatusCode);
         }

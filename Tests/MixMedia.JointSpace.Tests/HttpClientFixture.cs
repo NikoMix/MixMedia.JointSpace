@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 
 namespace MixMedia.JointSpace.Tests
 {
@@ -16,6 +14,7 @@ namespace MixMedia.JointSpace.Tests
 
         public void Dispose()
         {
+            Client.Dispose();
         }
     }
 }

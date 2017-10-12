@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using MixMedia.JointSpace.Manager;
 using Xunit;
 
@@ -25,7 +22,8 @@ namespace MixMedia.JointSpace.Tests
         [Fact]
         public void AudioManagerSetVolumeTest()
         {
-            _manager.SetAudioVolume(60 );
+            _manager.SetAudioVolume(60);
+            // If no Exception - pass Test
             Assert.True(true);
         }
 
@@ -33,6 +31,7 @@ namespace MixMedia.JointSpace.Tests
         public void AudioManagerSetVolumeMute()
         {
             _manager.SetAudioMute(true);
+            // If no Exception - pass Test
             Assert.True(true);
         }
     }

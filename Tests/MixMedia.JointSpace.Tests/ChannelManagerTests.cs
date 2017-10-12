@@ -1,32 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using MixMedia.JointSpace.Controller;
+﻿using System.Threading.Tasks;
 using MixMedia.JointSpace.Manager;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace MixMedia.JointSpace.Tests
 {
-    public class ChannelManagerTests
+    public class ChannelManagerTests : IClassFixture<HttpClientFixture>
     {
-        private readonly ITestOutputHelper output;
-        private readonly HttpClient client;
-        private readonly ChannelManager manager;
+        private readonly ChannelManager _manager;
 
-        public ChannelManagerTests(ITestOutputHelper output)
+        public ChannelManagerTests(HttpClientFixture clientFixture)
         {
-            this.output = output;
-            client = new HttpClient() { BaseAddress = new Uri("http://192.168.0.13:1925") };
-            manager = new ChannelManager(client);
+            _manager = new ChannelManager(clientFixture.Client);
         }
 
         [Fact]
-        public async Task SystemManagerTest()
+        public async Task ChannelManagerGetChannelsTest()
         {
-            var result = await manager.GetChannels();
+            var result = await _manager.GetChannels();
             
             Assert.NotEmpty(result);
         }

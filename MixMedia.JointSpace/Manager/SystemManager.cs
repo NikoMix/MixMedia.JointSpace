@@ -1,7 +1,5 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.TestHost;
 using MixMedia.JointSpace.Models;
 using MixMedia.JointSpace.Models.Responses;
 

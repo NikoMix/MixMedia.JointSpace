@@ -1,36 +1,41 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 using MixMedia.JointSpace.Models;
+using MixMedia.JointSpace.Models.Channel;
 
 namespace MixMedia.JointSpace.Manager
 {
+    /// <summary>
+    /// Since TV is not connected to cable network, cannot Test Channel Methods
+    /// </summary>
     public class ChannelManager
     {
-        private readonly HttpClient client;
+        private readonly HttpClient _client;
 
         public ChannelManager(HttpClient client)
         {
-            this.client = client;
+            _client = client;
         }
 
-        public async Task<ChannelList<ChannelDetails>> GetChannels()
+        public async Task<ChannelList> GetChannels()
         {
-            return await client.GetAsync<ChannelList<ChannelDetails>>($"/1/channels");
+            return await _client.GetAsync<ChannelList>($"/1/channels");
         }
         
-        public async void GetCurrentChannel()
+        public async Task<string> GetCurrentChannel()
         {
-            await client.GetAsync($"/1/channels/current");
+            var result = await _client.GetAsync<CurrentObject>($"/1/channels/current");
+            return result.Id;
         }
         
-        public async void SetCurrentChannel()
+        public async void SetCurrentChannel(string id)
         {
-            await client.PostAsync($"/1/channels/current", new StringContent(""));
+            await _client.PostAsync($"/1/channels/current", new CurrentObject{Id = id});
         }
         
-        public async void GetChannel(string id)
+        public async Task<ChannelExtendedDetails> GetChannel(string id)
         {
-            await client.GetAsync("/1/channels/{id}");
+            return await _client.GetAsync<ChannelExtendedDetails>("/1/channels/{id}");
         }
     }
 }

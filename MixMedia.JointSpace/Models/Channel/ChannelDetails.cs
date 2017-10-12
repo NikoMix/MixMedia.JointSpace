@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MixMedia.JointSpace.Models
+namespace MixMedia.JointSpace.Models.Channel
 {
     public class ChannelDetails
     {

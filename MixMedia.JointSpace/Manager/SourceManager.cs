@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 using MixMedia.JointSpace.Models;
 using MixMedia.JointSpace.Models.Source;
@@ -9,26 +7,27 @@ namespace MixMedia.JointSpace.Manager
 {
     public class SourceManager
     {
-        private readonly HttpClient client;
+        private readonly HttpClient _client;
 
         public SourceManager(HttpClient client)
         {
-            this.client = client;
+            _client = client;
         }
 
         public async Task<SourceList<Source>> GetSources()
         {
-            return await client.GetAsync<SourceList<Source>>($"/1/sources");
+            return await _client.GetAsync<SourceList<Source>>($"/1/sources");
         }
 
-        public async Task<SimpleSource> GetCurrentSource()
+        public async Task<string> GetCurrentSource()
         {
-            return await client.GetAsync<SimpleSource>($"/1/sources/current");
+            var result = await _client.GetAsync<CurrentObject>($"/1/sources/current");
+            return result.Id;
         }
         
         public async void SetCurrentSource(string id)
         {
-            await client.PostAsync($"/1/sources/current", new SimpleSource { Id = id});
+            await _client.PostAsync($"/1/sources/current", new CurrentObject { Id = id});
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace MixMedia.JointSpace.Models.Responses
+namespace MixMedia.JointSpace.Models
 {
-    public class CurrentSourceResponse
+    public class CurrentObject
     {
         [JsonProperty("id")]
         public string Id { get; set; }

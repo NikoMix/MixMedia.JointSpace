@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 using MixMedia.JointSpace.Models;
 using MixMedia.JointSpace.Models.Requests;
-using MixMedia.JointSpace.Models.Responses;
 
 namespace MixMedia.JointSpace.Manager
 {
@@ -28,6 +27,16 @@ namespace MixMedia.JointSpace.Manager
         public async void SetAudioMute(bool muted)
         {
             await _client.PostAsync($"/1/audio/volume", new SetVolumeRequest { Muted = muted });
+        }
+
+        /// <summary>
+        /// TODO: Test if TV sets both values in one Request
+        /// </summary>
+        /// <param name="muted"></param>
+        /// <param name="volume"></param>
+        public async void SetAudioMuteAndVolumne(bool muted, int volume)
+        {
+            await _client.PostAsync($"/1/audio/volume", new SetVolumeRequest { Muted = muted, Volume = volume});
         }
     }
 }

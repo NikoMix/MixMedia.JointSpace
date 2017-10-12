@@ -1,84 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using MixMedia.JointSpace.Manager;
+using MixMedia.JointSpace.Models;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace MixMedia.JointSpace.Tests
 {
-    public class SystemManagerTests
+    public class SystemManagerTests : IClassFixture<HttpClientFixture>
     {
-        private readonly ITestOutputHelper output;
-        private readonly HttpClient client;
-        private readonly SystemManager manager;
+        private readonly SystemManager _manager;
 
-        public SystemManagerTests(ITestOutputHelper output)
+        public SystemManagerTests(HttpClientFixture clientFixture)
         {
-            this.output = output;
-            client = new HttpClient() { BaseAddress = new Uri("http://192.168.0.13:1925") };
-            manager = new SystemManager(client);
+            _manager = new SystemManager(clientFixture.Client);
         }
 
         [Fact]
         public async Task SystemManagerGetSoftwareVersionTest()
         {
-            var result = await manager.GetSoftwareVersion();
-
-            output.WriteLine(result);
+            var result = await _manager.GetSoftwareVersion();
+            
             Assert.NotEqual(result, string.Empty);
         }
 
         [Fact]
         public async Task SystemManagerGetModelTest()
         {
-            var result = await manager.GetModel();
-
-            output.WriteLine(result);
+            var result = await _manager.GetModel();
+            
             Assert.NotEqual(result, string.Empty);
         }
 
         [Fact]
         public async Task SystemManagerGetNameTest()
         {
-            var result = await manager.GetName();
-
-            output.WriteLine(result);
+            var result = await _manager.GetName();
+            
             Assert.NotEqual(result, string.Empty);
         }
 
         [Fact]
         public async Task SystemManagerGetMenuLanguageTest()
         {
-            var result = await manager.GetMenuLanguage();
-
-            output.WriteLine(result.ToString());
-            Assert.True(true);
+            var result = await _manager.GetMenuLanguage();
+            
+            Assert.IsType<JointSpaceMenuLanguages>(result);
         }
 
         [Fact]
-        public async Task SystemManagerTest()
+        public async Task SystemManagerGetCountryTest()
         {
-            var result = await manager.GetCountry();
+            var result = await _manager.GetCountry();
+            
+            Assert.IsType<JointSpaceCountries>(result);
+        }
 
-            output.WriteLine(result.ToString());
-            Assert.True(true);
+        [Fact]
+        public async Task SystemManagerGetSerialNumberTest()
+        {
+            var result = await _manager.GetSerialNumber();
+            
+            Assert.IsType<string>(result);
         }
 
         [Fact]
         public async Task SystemManagerGetSystemDetailsTest()
         {
-            var result = await manager.GetSystemDetails();
-
-            output.WriteLine(result.Name);
-            output.WriteLine(result.Country);
-            output.WriteLine(result.MenuLanguage);
-            output.WriteLine(result.SerialNumber);
-            output.WriteLine(result.SoftwareVersion);
-            Assert.True(true);
+            var result = await _manager.GetSystemDetails();
+            
+            Assert.IsType<Models.System>(result);
         }
     }
 }
