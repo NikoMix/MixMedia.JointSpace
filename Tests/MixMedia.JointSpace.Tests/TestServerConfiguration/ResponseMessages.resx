@@ -117,12 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EmptyChannelList" xml:space="preserve">
-    <value>{
-
-}</value>
-  </data>
-  <data name="MeasuredResponse" xml:space="preserve">
+  <data name="AmbilightResponse" xml:space="preserve">
     <value>{
 	"layer1": {
 		"left": {
@@ -220,6 +215,25 @@
 
 		}
 	}
+}</value>
+  </data>
+  <data name="EmptyChannelList" xml:space="preserve">
+    <value>{
+
+}</value>
+  </data>
+  <data name="GetAmbilightModeResponse" xml:space="preserve">
+    <value>{
+	"current": "internal"
+}</value>
+  </data>
+  <data name="GetTopologyResponse" xml:space="preserve">
+    <value>{
+	"layers": 1,
+	"left": 4,
+	"top": 9,
+	"right": 4,
+	"bottom": 0
 }</value>
   </data>
   <data name="SourcesResponse" xml:space="preserve">

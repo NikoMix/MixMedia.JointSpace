@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
     <PackageReference Include="xunit" Version="2.3.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0" />
@@ -24,7 +26,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="ResponseMessages.Designer.cs">
+    <Compile Update="TestServerConfiguration\ResponseMessages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ResponseMessages.resx</DependentUpon>
@@ -36,7 +38,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="ResponseMessages.resx">
+    <EmbeddedResource Update="TestServerConfiguration\ResponseMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ResponseMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>

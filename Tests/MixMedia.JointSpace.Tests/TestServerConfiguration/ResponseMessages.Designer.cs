@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MixMedia.JointSpace.Tests {
+namespace MixMedia.JointSpace.Tests.TestServerConfiguration {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MixMedia.JointSpace.Tests {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MixMedia.JointSpace.Tests.ResponseMessages", typeof(ResponseMessages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MixMedia.JointSpace.Tests.TestServerConfiguration.ResponseMessages", typeof(ResponseMessages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,17 +57,6 @@ namespace MixMedia.JointSpace.Tests {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {
-        ///
-        ///} ähnelt.
-        /// </summary>
-        internal static string EmptyChannelList {
-            get {
-                return ResourceManager.GetString("EmptyChannelList", resourceCulture);
             }
         }
         
@@ -117,9 +106,46 @@ namespace MixMedia.JointSpace.Tests {
         ///				&quot;g&quot;: 42,
         ///				&quot;b&quot;: 74 [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
         /// </summary>
-        internal static string MeasuredResponse {
+        internal static string AmbilightResponse {
             get {
-                return ResourceManager.GetString("MeasuredResponse", resourceCulture);
+                return ResourceManager.GetString("AmbilightResponse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///
+        ///} ähnelt.
+        /// </summary>
+        internal static string EmptyChannelList {
+            get {
+                return ResourceManager.GetString("EmptyChannelList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;current&quot;: &quot;internal&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string GetAmbilightModeResponse {
+            get {
+                return ResourceManager.GetString("GetAmbilightModeResponse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;layers&quot;: 1,
+        ///	&quot;left&quot;: 4,
+        ///	&quot;top&quot;: 9,
+        ///	&quot;right&quot;: 4,
+        ///	&quot;bottom&quot;: 0
+        ///} ähnelt.
+        /// </summary>
+        internal static string GetTopologyResponse {
+            get {
+                return ResourceManager.GetString("GetTopologyResponse", resourceCulture);
             }
         }
         

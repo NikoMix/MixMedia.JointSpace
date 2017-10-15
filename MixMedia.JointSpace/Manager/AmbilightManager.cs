@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using MixMedia.JointSpace.Models;
 using MixMedia.JointSpace.Models.Ambilight;
+using MixMedia.JointSpace.Models.Requests;
 
 namespace MixMedia.JointSpace.Manager
 {
@@ -21,10 +22,11 @@ namespace MixMedia.JointSpace.Manager
         
         public async Task<JointSpaceAmbilightModes> GetMode()
         {
-            return await _client.GetAsync<JointSpaceAmbilightModes>($"/1/ambilight/mode");
+            var response = await _client.GetAsync<AmbilightModeRequest>($"/1/ambilight/mode");
+            return response.Mode;
         }
         
-        public async void SetMode(JointSpaceAmbilightModes mode)
+        public async Task SetMode(JointSpaceAmbilightModes mode)
         {
             await _client.PostAsync($"/1/ambilight/mode", mode);
         }
