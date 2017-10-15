@@ -15,10 +15,10 @@ namespace MixMedia.JointSpace.Tests
         public HttpClientFixture()
         {
             _server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
-            //Client = _server.CreateClient();
+            Client = _server.CreateClient();
 
             // To Test against a real Device uncomment this line and replace <IP Address>
-             Client = new HttpClient { BaseAddress = new Uri("http://192.168.0.13:1925") };
+            // Client = new HttpClient { BaseAddress = new Uri("http://192.168.0.13:1925") };
         }
 
         public void Dispose()

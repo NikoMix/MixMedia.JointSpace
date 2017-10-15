@@ -217,6 +217,50 @@
 	}
 }</value>
   </data>
+  <data name="AudioGetVolumne" xml:space="preserve">
+    <value>{
+	"muted": false,
+	"current": 14,
+	"min": 1,
+	"max": 60
+}</value>
+  </data>
+  <data name="ChannelListGetAll" xml:space="preserve">
+    <value>{
+	"tv_all": {
+		"name": "All TV channels",
+		"source": "tv"
+	},
+	"tv_favourite": {
+		"name": "Favourite TV channels",
+		"source": "tv"
+	},
+	"tv_radio": {
+		"name": "Radio TV channels",
+		"source": "tv"
+	},
+	"tv_tv": {
+		"name": "Non-radio TV channels",
+		"source": "tv"
+	},
+	"sat_all": {
+		"name": "All satellite channels",
+		"source": "satellite"
+	},
+	"sat_favourite": {
+		"name": "Favourite satellite channels",
+		"source": "satellite"
+	},
+	"sat_radio": {
+		"name": "Radio satellite channels",
+		"source": "satellite"
+	},
+	"sat_tv": {
+		"name": "Non-radio satellite channels",
+		"source": "satellite"
+	}
+}</value>
+  </data>
   <data name="EmptyChannelList" xml:space="preserve">
     <value>{
 
@@ -234,6 +278,39 @@
 	"top": 9,
 	"right": 4,
 	"bottom": 0
+}</value>
+  </data>
+  <data name="SourcesGetCurrent" xml:space="preserve">
+    <value>{
+	"id": "29"
+}</value>
+  </data>
+  <data name="SourcesGetSources" xml:space="preserve">
+    <value>{
+	"11": {
+		"name": "Kabel- /Antennen- Fernsehen"
+	},
+	"17": {
+		"name": "Satelliten- Fernsehen"
+	},
+	"28": {
+		"name": "HDMI 1"
+	},
+	"29": {
+		"name": "HDMI 2"
+	},
+	"30": {
+		"name": "HDMI 3"
+	},
+	"31": {
+		"name": "HDMI 4"
+	},
+	"32": {
+		"name": "SCART"
+	},
+	"33": {
+		"name": "Y Pb Pr"
+	}
 }</value>
   </data>
   <data name="SourcesResponse" xml:space="preserve">
@@ -262,6 +339,46 @@
 	"33": {
 		"name": "Y Pb Pr"
 	}
+}</value>
+  </data>
+  <data name="SystemGetCountry" xml:space="preserve">
+    <value>{
+	"country": "Germany"
+}</value>
+  </data>
+  <data name="SystemGetDetails" xml:space="preserve">
+    <value>{
+	"menulanguage": "German",
+	"name": "55\" Philips 8008",
+	"country": "Germany",
+	"serialnumber": "AB1C2345678901",
+	"softwareversion": "QF2EU-0.173.67.0",
+	"model": "55PFL8008S/12"
+}</value>
+  </data>
+  <data name="SystemGetMenuLanguage" xml:space="preserve">
+    <value>{
+	"menulanguage": "German"
+}</value>
+  </data>
+  <data name="SystemGetModel" xml:space="preserve">
+    <value>{
+	"model": "55PFL8008S/12"
+}</value>
+  </data>
+  <data name="SystemGetName" xml:space="preserve">
+    <value>{
+	"name": "55\" Philips 8008"
+}</value>
+  </data>
+  <data name="SystemGetSerialNumber" xml:space="preserve">
+    <value>{
+	"serialnumber": "AB1C2345678901"
+}</value>
+  </data>
+  <data name="SystemGetVersionNumber" xml:space="preserve">
+    <value>{
+	"softwareversion": "QF2EU-0.173.67.0"
 }</value>
   </data>
 </root>

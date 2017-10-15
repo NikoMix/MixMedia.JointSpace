@@ -42,21 +42,28 @@ namespace MixMedia.JointSpace.Tests
             Assert.NotNull(result);
         }
 
-        /// <summary>
-        /// Test will switch through all Sources and validates the current channel
-        /// </summary>
-        /// <returns>Success if no Exception appears</returns>
         [Fact]
         public async Task SourceManagerSetCurrentSourceTest()
         {
-            var result = await _manager.GetSources();
-            foreach (var channel in result)
-            {
-                _manager.SetCurrentSource(channel.Key);
-                Thread.Sleep(1500);
-                var current = await _manager.GetCurrentSource();
-                //Assert.Equal(current.Id, channel.Key);
-            }
+            await _manager.SetCurrentSource("29");
         }
+
+        // TODO: Change Controller to keep Test interchangeable between real device and Testserver
+        ///// <summary>
+        ///// Test will switch through all Sources and validates the current channel
+        ///// </summary>
+        ///// <returns>Success if no Exception appears</returns>
+        //[Fact]
+        //public async Task SourceManagerSetCurrentSourceTest()
+        //{
+        //    var result = await _manager.GetSources();
+        //    foreach (var channel in result)
+        //    {
+        //        _manager.SetCurrentSource(channel.Key);
+        //        Thread.Sleep(1500);
+        //        var current = await _manager.GetCurrentSource();
+        //        //Assert.Equal(current.Id, channel.Key);
+        //    }
+        //}
     }
 }

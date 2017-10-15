@@ -114,6 +114,55 @@ namespace MixMedia.JointSpace.Tests.TestServerConfiguration {
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;muted&quot;: false,
+        ///	&quot;current&quot;: 14,
+        ///	&quot;min&quot;: 1,
+        ///	&quot;max&quot;: 60
+        ///} ähnelt.
+        /// </summary>
+        internal static string AudioGetVolumne {
+            get {
+                return ResourceManager.GetString("AudioGetVolumne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;tv_all&quot;: {
+        ///		&quot;name&quot;: &quot;All TV channels&quot;,
+        ///		&quot;source&quot;: &quot;tv&quot;
+        ///	},
+        ///	&quot;tv_favourite&quot;: {
+        ///		&quot;name&quot;: &quot;Favourite TV channels&quot;,
+        ///		&quot;source&quot;: &quot;tv&quot;
+        ///	},
+        ///	&quot;tv_radio&quot;: {
+        ///		&quot;name&quot;: &quot;Radio TV channels&quot;,
+        ///		&quot;source&quot;: &quot;tv&quot;
+        ///	},
+        ///	&quot;tv_tv&quot;: {
+        ///		&quot;name&quot;: &quot;Non-radio TV channels&quot;,
+        ///		&quot;source&quot;: &quot;tv&quot;
+        ///	},
+        ///	&quot;sat_all&quot;: {
+        ///		&quot;name&quot;: &quot;All satellite channels&quot;,
+        ///		&quot;source&quot;: &quot;satellite&quot;
+        ///	},
+        ///	&quot;sat_favourite&quot;: {
+        ///		&quot;name&quot;: &quot;Favourite satellite channels&quot;,
+        ///		&quot;source&quot;: &quot;satellite&quot;
+        ///	},
+        ///	&quot;sat_radio&quot;: {
+        ///		&quot;name&quot;: &quot;Radio satellite  [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        /// </summary>
+        internal static string ChannelListGetAll {
+            get {
+                return ResourceManager.GetString("ChannelListGetAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
         ///
         ///} ähnelt.
         /// </summary>
@@ -151,6 +200,51 @@ namespace MixMedia.JointSpace.Tests.TestServerConfiguration {
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;id&quot;: &quot;29&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string SourcesGetCurrent {
+            get {
+                return ResourceManager.GetString("SourcesGetCurrent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;11&quot;: {
+        ///		&quot;name&quot;: &quot;Kabel- /Antennen- Fernsehen&quot;
+        ///	},
+        ///	&quot;17&quot;: {
+        ///		&quot;name&quot;: &quot;Satelliten- Fernsehen&quot;
+        ///	},
+        ///	&quot;28&quot;: {
+        ///		&quot;name&quot;: &quot;HDMI 1&quot;
+        ///	},
+        ///	&quot;29&quot;: {
+        ///		&quot;name&quot;: &quot;HDMI 2&quot;
+        ///	},
+        ///	&quot;30&quot;: {
+        ///		&quot;name&quot;: &quot;HDMI 3&quot;
+        ///	},
+        ///	&quot;31&quot;: {
+        ///		&quot;name&quot;: &quot;HDMI 4&quot;
+        ///	},
+        ///	&quot;32&quot;: {
+        ///		&quot;name&quot;: &quot;SCART&quot;
+        ///	},
+        ///	&quot;33&quot;: {
+        ///		&quot;name&quot;: &quot;Y Pb Pr&quot;
+        ///	}
+        ///} ähnelt.
+        /// </summary>
+        internal static string SourcesGetSources {
+            get {
+                return ResourceManager.GetString("SourcesGetSources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
         ///	&quot;11&quot;: {
         ///		&quot;name&quot;: &quot;Kabel- /Antennen- Fernsehen&quot;
         ///	},
@@ -180,6 +274,88 @@ namespace MixMedia.JointSpace.Tests.TestServerConfiguration {
         internal static string SourcesResponse {
             get {
                 return ResourceManager.GetString("SourcesResponse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;country&quot;: &quot;Germany&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string SystemGetCountry {
+            get {
+                return ResourceManager.GetString("SystemGetCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;menulanguage&quot;: &quot;German&quot;,
+        ///	&quot;name&quot;: &quot;55\&quot; Philips 8008&quot;,
+        ///	&quot;country&quot;: &quot;Germany&quot;,
+        ///	&quot;serialnumber&quot;: &quot;AB1C2345678901&quot;,
+        ///	&quot;softwareversion&quot;: &quot;QF2EU-0.173.67.0&quot;,
+        ///	&quot;model&quot;: &quot;55PFL8008S/12&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string SystemGetDetails {
+            get {
+                return ResourceManager.GetString("SystemGetDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;menulanguage&quot;: &quot;German&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string SystemGetMenuLanguage {
+            get {
+                return ResourceManager.GetString("SystemGetMenuLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;model&quot;: &quot;55PFL8008S/12&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string SystemGetModel {
+            get {
+                return ResourceManager.GetString("SystemGetModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;name&quot;: &quot;55\&quot; Philips 8008&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string SystemGetName {
+            get {
+                return ResourceManager.GetString("SystemGetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;serialnumber&quot;: &quot;AB1C2345678901&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string SystemGetSerialNumber {
+            get {
+                return ResourceManager.GetString("SystemGetSerialNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;softwareversion&quot;: &quot;QF2EU-0.173.67.0&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string SystemGetVersionNumber {
+            get {
+                return ResourceManager.GetString("SystemGetVersionNumber", resourceCulture);
             }
         }
     }

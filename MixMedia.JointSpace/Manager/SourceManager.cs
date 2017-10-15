@@ -25,7 +25,7 @@ namespace MixMedia.JointSpace.Manager
             return result.Id;
         }
         
-        public async void SetCurrentSource(string id)
+        public async Task SetCurrentSource(string id)
         {
             await _client.PostAsync($"/1/sources/current", new CurrentObject { Id = id});
         }
