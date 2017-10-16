@@ -12,7 +12,6 @@ namespace MixMedia.JointSpace
         {
             var response = await client.GetAsync(requestedUri);
             response.EnsureSuccessStatusCode();
-            var content = response.Content.ReadAsStringAsync();
             return await response.As<TResponse>();
         }
 

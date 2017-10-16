@@ -35,7 +35,7 @@ namespace MixMedia.JointSpace.Manager
         
         public async Task<ChannelExtendedDetails> GetChannel(string id)
         {
-            return await _client.GetAsync<ChannelExtendedDetails>("/1/channels/{id}");
+            return await _client.GetAsync<ChannelExtendedDetails>($"/1/channels/{id}");
         }
     }
 }
