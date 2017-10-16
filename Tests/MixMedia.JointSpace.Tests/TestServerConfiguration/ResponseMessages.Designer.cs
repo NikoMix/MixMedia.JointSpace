@@ -162,6 +162,78 @@ namespace MixMedia.JointSpace.Tests.TestServerConfiguration {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die [
+        ///    &quot;fingerprint-1&quot;,
+        ///    &quot;fingerprint-2&quot;,
+        ///    &quot;fingerprint-3&quot;
+        ///] ähnelt.
+        /// </summary>
+        internal static string ChannelListGetChannelList {
+            get {
+                return ResourceManager.GetString("ChannelListGetChannelList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///    &quot;fingerprint-1&quot;:
+        ///    {
+        ///        &quot;preset&quot;: &quot;1&quot;,
+        ///        &quot;name&quot;: &quot;Flower&quot;,
+        ///    },
+        ///    &quot;fingerprint-2&quot;:
+        ///    {
+        ///        &quot;preset&quot;: &quot;2&quot;,
+        ///        &quot;name&quot;: &quot;Moving Colourbar&quot;
+        ///    },
+        ///    &quot;fingerprint-3&quot;:
+        ///    {
+        ///        &quot;preset&quot;: &quot;12.3&quot;,
+        ///        &quot;name&quot;: &quot;Irdeto scrambled&quot;
+        ///    },
+        ///    &quot;fingerprint-4&quot;:
+        ///    {
+        ///        &quot;preset&quot;: &quot;4&quot;,
+        ///        &quot;name&quot;: &quot;Codec 16:9 scrambled&quot;
+        ///    }
+        ///} ähnelt.
+        /// </summary>
+        internal static string ChannelsGetAll {
+            get {
+                return ResourceManager.GetString("ChannelsGetAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///	&quot;preset&quot;: &quot;4&quot;,
+        ///	&quot;name&quot;: &quot;Premium Cinema HD&quot;,
+        ///	&quot;frequency&quot;: &quot;3176&quot;,
+        ///	&quot;onid&quot;: &quot;272&quot;,
+        ///	&quot;tsid&quot;: &quot;940&quot;,
+        ///	&quot;sid&quot;: &quot;4301&quot;,
+        ///	&quot;analog&quot;: false,
+        ///	&quot;digital&quot;: &quot;DVB&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string ChannelsGetChannel {
+            get {
+                return ResourceManager.GetString("ChannelsGetChannel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {
+        ///    &quot;id&quot;: &quot;fingerprint-1&quot;
+        ///} ähnelt.
+        /// </summary>
+        internal static string ChannelsGetCurrent {
+            get {
+                return ResourceManager.GetString("ChannelsGetCurrent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die {
         ///
         ///} ähnelt.

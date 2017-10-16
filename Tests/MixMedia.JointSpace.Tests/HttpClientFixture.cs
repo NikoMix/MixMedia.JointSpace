@@ -9,16 +9,17 @@ namespace MixMedia.JointSpace.Tests
 {
     public class HttpClientFixture : IDisposable
     {
-        private readonly TestServer _server;
-        public HttpClient Client { get; set; }
+        public HttpClient Client { get; }
+
+        public TestServer Server { get; }
 
         public HttpClientFixture()
         {
-            _server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
-            Client = _server.CreateClient();
+            Server = new TestServer(new WebHostBuilder().UseStartup<Startup>());
+            Client = Server.CreateClient();
 
             // To Test against a real Device uncomment this line and replace <IP Address>
-            // Client = new HttpClient { BaseAddress = new Uri("http://192.168.0.13:1925") };
+            // Client = new HttpClient { BaseAddress = new Uri("http://<IP Address>:1925") };
         }
 
         public void Dispose()

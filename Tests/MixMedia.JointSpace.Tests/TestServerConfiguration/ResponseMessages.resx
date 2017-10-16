@@ -261,6 +261,54 @@
 	}
 }</value>
   </data>
+  <data name="ChannelListGetChannelList" xml:space="preserve">
+    <value>[
+    "fingerprint-1",
+    "fingerprint-2",
+    "fingerprint-3"
+]</value>
+  </data>
+  <data name="ChannelsGetAll" xml:space="preserve">
+    <value>{
+    "fingerprint-1":
+    {
+        "preset": "1",
+        "name": "Flower",
+    },
+    "fingerprint-2":
+    {
+        "preset": "2",
+        "name": "Moving Colourbar"
+    },
+    "fingerprint-3":
+    {
+        "preset": "12.3",
+        "name": "Irdeto scrambled"
+    },
+    "fingerprint-4":
+    {
+        "preset": "4",
+        "name": "Codec 16:9 scrambled"
+    }
+}</value>
+  </data>
+  <data name="ChannelsGetChannel" xml:space="preserve">
+    <value>{
+	"preset": "4",
+	"name": "Premium Cinema HD",
+	"frequency": "3176",
+	"onid": "272",
+	"tsid": "940",
+	"sid": "4301",
+	"analog": false,
+	"digital": "DVB"
+}</value>
+  </data>
+  <data name="ChannelsGetCurrent" xml:space="preserve">
+    <value>{
+    "id": "fingerprint-1"
+}</value>
+  </data>
   <data name="EmptyChannelList" xml:space="preserve">
     <value>{
 

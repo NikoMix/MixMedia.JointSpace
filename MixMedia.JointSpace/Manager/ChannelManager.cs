@@ -17,18 +17,18 @@ namespace MixMedia.JointSpace.Manager
             _client = client;
         }
 
-        public async Task<ChannelList> GetChannels()
+        public async Task<ChannelList<ChannelDetails>> GetChannels()
         {
-            return await _client.GetAsync<ChannelList>($"/1/channels");
+            return await _client.GetAsync<ChannelList<ChannelDetails>>($"/1/channels");
         }
-        
+
         public async Task<string> GetCurrentChannel()
         {
             var result = await _client.GetAsync<CurrentObject>($"/1/channels/current");
             return result.Id;
         }
         
-        public async void SetCurrentChannel(string id)
+        public async Task SetCurrentChannel(string id)
         {
             await _client.PostAsync($"/1/channels/current", new CurrentObject{Id = id});
         }

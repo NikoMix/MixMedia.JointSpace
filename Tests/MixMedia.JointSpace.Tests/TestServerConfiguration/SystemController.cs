@@ -35,7 +35,7 @@ namespace MixMedia.JointSpace.Tests.TestServerConfiguration
         [HttpGet("serialnumber")]
         public string GetSerialNumber()
         {
-            return ResponseMessages.SystemGetVersionNumber;
+            return ResponseMessages.SystemGetSerialNumber;
         }
 
         [HttpGet("model")]

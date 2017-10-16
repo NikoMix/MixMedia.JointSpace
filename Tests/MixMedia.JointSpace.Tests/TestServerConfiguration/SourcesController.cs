@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
+using MixMedia.JointSpace.Models;
 
 namespace MixMedia.JointSpace.Tests.TestServerConfiguration
 {
     [Route("1/sources")]
-    public class SourceController : Controller
+    public class SourcesController : Controller
     {
         [HttpGet]
         public string GetSources()
@@ -14,16 +15,12 @@ namespace MixMedia.JointSpace.Tests.TestServerConfiguration
             return ResponseMessages.SourcesGetSources;
         }
 
-        [HttpGet("/current")]
+        [HttpGet("current")]
         public string GetCurrentSource()
         {
             return ResponseMessages.SourcesGetCurrent;
         }
 
-        [HttpPost("/current")]
-        public void SetCurrentSource()
-        {
-            
-        }
+
     }
 }

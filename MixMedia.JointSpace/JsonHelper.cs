@@ -11,6 +11,7 @@ namespace MixMedia.JointSpace
             where TResponse : new()
         {
             var response = await client.GetAsync(requestedUri);
+            response.EnsureSuccessStatusCode();
             var content = response.Content.ReadAsStringAsync();
             return await response.As<TResponse>();
         }
@@ -19,6 +20,7 @@ namespace MixMedia.JointSpace
             where TResponse : new()
         {
             var response = await client.DeleteAsync(requestedUri);
+            response.EnsureSuccessStatusCode();
             return await response.As<TResponse>();
         }
 
@@ -28,7 +30,7 @@ namespace MixMedia.JointSpace
         {
             var response = await client.PostAsync(requestedUri,
                 AsStringContent(requestObject));
-
+            response.EnsureSuccessStatusCode();
             return await response.As<TResponse>();
         }
 
@@ -37,7 +39,6 @@ namespace MixMedia.JointSpace
         {
             return await client.PostAsync(requestedUri,
               AsStringContent(requestObject));
-            
         }
 
         public static async Task<TResponse> PutAsync<TRequest, TResponse>(this HttpClient client, string requestedUri, TRequest requestObject)
@@ -46,7 +47,7 @@ namespace MixMedia.JointSpace
         {
             var response = await client.PutAsync(requestedUri,
                 AsStringContent<TRequest>(requestObject));
-
+            response.EnsureSuccessStatusCode();
             return await response.As<TResponse>();
         }
 
