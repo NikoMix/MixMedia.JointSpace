@@ -4,6 +4,7 @@ Library to interact with Philips TVs running the JointSpace Interface.
 Supported TV Series and Procedure to activate JointSpace for your TV can be found here http://jointspace.sourceforge.net/download.html
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/NikoMix/MixMedia.JointSpace?branch=master)](https://bettercodehub.com/)
+[![Build Status](https://travis-ci.org/NikoMix/MixMedia.JointSpace.svg?branch=master)](https://travis-ci.org/NikoMix/MixMedia.JointSpace)
 
 ## Getting Started
 Wrapper is built into seperate Managers, which need a HttpClient injected, since the Implementation can differ by Platform
