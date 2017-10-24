@@ -7,4 +7,3 @@ solution: MixMedia.JointSpace.sln
 script:
   - dotnet restore
   - dotnet build -c Release
-  - dotnet test
