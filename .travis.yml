@@ -8,12 +8,16 @@ solution: MixMedia.JointSpace.sln
 script:
   - dotnet restore
   - dotnet build -c Release
-before_install:
-  - wget --no-check-certificate https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-install:
-  - mono ./nuget.exe install NUnit.Runners -Version 3.0.1 -OutputDirectory testrunner
-script:
-  - make compile test
-after_script:
-  - make coverage
-  - bash <(curl -s https://codecov.io/bash)
+
+before_build:
+- nuget restore
+- choco install opencover.portable
+- choco install codecov
+
+build:
+  project: MixMedia.JointSpace.sln
+  verbosity: minimal
+
+test_script:
+- OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\Tests\MixMedia.JointSpace.Tests\bin\Debug\netcoreapp2.0\MixMedia.JointSpace.Tests.dll -noshadow" -filter:"+[UnitTestTargetProject*]* -[MyUnitTests*]*" -output:".\MyProject_coverage.xml"
+- codecov -f "MyProject_coverage.xml"
